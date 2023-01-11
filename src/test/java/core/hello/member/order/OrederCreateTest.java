@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 public class OrederCreateTest {
     @Test
     void orderCreate (){
-        OrderService orderService = new OrderServiceImp();
+        OrderService orderService = new OrderServiceImp(memberRepository, discountPolicy);
         MemberService memberService = new MemberServiceImp();
 
         Long memberId = 1L;

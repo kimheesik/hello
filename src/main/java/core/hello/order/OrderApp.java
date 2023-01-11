@@ -1,11 +1,13 @@
 package core.hello.order;
 
+import core.hello.AppConfig;
 import core.hello.member.*;
 
 public class OrderApp {
     public static void main(String[] args) {
-        OrderService orderService = new OrderServiceImp();
-        MemberService memberService = new MemberServiceImp();
+        AppConfig appConfig = new AppConfig();
+        OrderService orderService = appConfig.orderService();
+        MemberService memberService = appConfig.memberService();
 
         Long memberId = 1L;
         Member member = new Member(memberId, "lee", Grade.VIP);
